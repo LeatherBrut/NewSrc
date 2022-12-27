@@ -108,11 +108,3 @@ void(vector virtmin, vector virtsize) Hud_Intermission =
 };
 
 //called unless there's a menu/finale visible. also called during intermissions.
-void(vector virtsize, float showscores) CSQC_DrawScores =
-{
-	if (intermission || showscores || getstatf(STAT_HEALTH) <= 0)
-		if (deathmatch)
-			return Hud_DeathmatchScoreboard('0 0 0', virtsize);
-	if (intermission)
-		Hud_Intermission('0 0 0', virtsize);
-};

@@ -1,6 +1,7 @@
+//client side
 csprogs.dat
 csprogsdefs.qc
 
 //CSQC extensions start here.
-csqc_hud_vanilla.qc
+Hud.qc
 csqc_scoreboard.qc
