@@ -5,7 +5,7 @@
 #define MENU		//select the module
 
 #includelist
-dpextensions.qc
+../dpextensions.qc
 menusys/mitems.qc		//root item type
 menusys/mitems_common.qc	//basic types
 menusys/mitem_desktop.qc	//other sort of root item
@@ -50,9 +50,8 @@ void(mitem_desktop desktop) M_Pop =
 	cmd("m_newgame",	M_NewGame,		menu/newgame.qc)		\
 	cmd("m_servers",	M_Servers,		menu/servers.qc)		\
 	cmd("m_configs",	M_Configs,		menu/options_configs.qc)	\
-	cmd("m_reset",		M_Reset,		)				\
-	cmd("m_preset",		M_Preset,		menu/presets.qc)
-	
+	cmd("m_reset",		M_Reset,		)				\			cmd("m_preset",		M_Preset,		menu/presets.qc)
+
 
 #if 0
 #append concommandslist	cmd("m_servers",	M_Servers,		menu/servers.qc)
@@ -108,10 +107,10 @@ void() m_init =
 		dp_workarounds = autocvar(dp_workarounds_allow, TRUE);
 	if (autocvar(dp_workarounds_force, FALSE))
 		dp_workarounds = TRUE;
-	
+
 	if (dp_workarounds)
 		print("^1WORKING AROUND DP BUGS\n");
-	
+
 	//for compat with DP, 'none' is the default cursor in menuqc.
 	//naturally this is not ideal.
 	if (checkextension("FTE_QC_HARDWARECURSORS"))

@@ -101,7 +101,7 @@ void(vector virtmin, vector virtsize) Hud_Intermission =
 
 	Hud_CentrePic("gfx/complete.lmp", 320, pos+'0 24', 24);
 	drawpic(pos+[0,56], "gfx/inter.lmp", [160,144],[1,1,1],1,0);
-	
+
 	Hud_DrawIntermissionNumber(pos+[144, 64], sprintf("%3.0f:%02.0f", intermission_time/60, intermission_time%60));
 	Hud_DrawIntermissionNumber(pos+[144, 104], sprintf("%3.0f/%.0f", getstatf(STAT_FOUNDSECRETS), getstatf(STAT_TOTALSECRETS)));
 	Hud_DrawIntermissionNumber(pos+[144, 144], sprintf("%3.0f/%.0f", getstatf(STAT_KILLEDMONSTERS), getstatf(STAT_TOTALMONSTERS)));

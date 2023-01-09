@@ -1,2 +1,6 @@
+//QuakeC serverSide
+
+./progs.dat
 progsdefs.qc
-dpextensions.qc
+keycodes.qc
+../dpextensions.qc

@@ -1,0 +1,8 @@
+//QuakeC ClientSide
+
+./csprogs.dat
+csprogsdefs.qc
+
+//CSQC extensions start here.
+Hud.qc
+//csqc_scoreboard.qc
