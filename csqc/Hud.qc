@@ -1,6 +1,6 @@
 //	This file implements NQ, QW, and N64-style huds in csqc. Its meant to be complete, while not otherwise being that different.
 //	The hud layout+items used are specific to vanilla Quake. For the mission packs, you should use the appropriate alternative huds.
-//	
+//
 //	The entry points are at the bottom of the file.
 //	You can just add this file (and fteextensions.qc or qsextensions.qc) into any mod and then just adapt it as desired.
 //
@@ -22,7 +22,7 @@
 		1: left
 	scr_sbaralpha: opacity of backgroundy elements
 */
-
+/*
 // items. FIXME: you should share these with your ssqc...
 float	IT_SHOTGUN				= 1<<0;
 float	IT_SUPER_SHOTGUN		= 1<<1;
@@ -56,7 +56,7 @@ float IT2_RUNE1					= 1<<5;
 float IT2_RUNE2					= 1<<6;
 float IT2_RUNE3					= 1<<7;
 float IT2_RUNE4					= 1<<8;
-
+*/
 
 //wad image names in array form, for easier access.
 static string number[10] = {
@@ -141,7 +141,7 @@ static void() Hud_Init
 	precache_pic("gfx/sb_invuln", TRUE);
 	precache_pic("gfx/sb_suit", TRUE);
 	precache_pic("gfx/sb_quad", TRUE);
-	
+
 	precache_pic("gfx/sb_sigil1", TRUE);
 	precache_pic("gfx/sb_sigil2", TRUE);
 	precache_pic("gfx/sb_sigil3", TRUE);
@@ -178,7 +178,7 @@ static void(vector pos, float value, float threshhold) Hud_DrawLargeValue =
 	len = strlen(s);
 
 	pos_x += 24 * (3-len);
-	
+
 
 	if (value <= threshhold)
 	{	//use alternate (red) numbers
@@ -215,7 +215,7 @@ static void(float type, vector pos, float drawback) Hud_DrawAmmoCount =
 		value = 0;	//hrm
 	if (value>999)
 		value = 999;
-		
+
 	if (drawback)
 	{
 		drawsubpic(pos, '42 11', "gfx/ibar", [(3.0/320)+type*(48.0/320), 0], [42.0/320, 11.0/24], '1 1 1', autocvar(scr_sbaralpha, 0.75), 0);
@@ -379,7 +379,7 @@ static void Hud_DrawFace(vector pos)
 			frame += 5;	//pain.
 		face = facetab[frame];
 	}
-	
+
 	if (shealth > 100)
 		Hud_PicOrModel(pos, face, "maps/b_bh100.bsp", 0, -90);
 	else if (shealth > 50)
@@ -427,7 +427,7 @@ static void Hud_DrawSBar(vector pos, vector virtsize)
 		Hud_DrawLargeValue(pos-[24*3], getstatf(STAT_AMMO), 10);
 		return;
 	}
-	
+
 	if (autocvar(cl_sbar, 1))
 		drawpic(pos, "gfx/sbar", '320 24 0', '1 1 1', autocvar(scr_sbaralpha, 0.75), 0);
 
@@ -572,12 +572,12 @@ static void Hud_Draw(vector virtsize, float scoreboard)
 	pos_x = (virtsize_x-320)/2;
 	pos_y = virtsize_y;
 
-	sitems = getstatbits(STAT_ITEMS, 0, 23);	//note that we could use getstati to read the items stat, but it'd degrade when then cast to a float, and QSS+DP don't support ints, so we have to use two floats. 
+	sitems = getstatbits(STAT_ITEMS, 0, 23);	//note that we could use getstati to read the items stat, but it'd degrade when then cast to a float, and QSS+DP don't support ints, so we have to use two floats.
 	sitems2 = getstatbits(STAT_ITEMS, 23, 9);
 	sweapon = getstatf(STAT_ACTIVEWEAPON);
 	shealth = getstatf(STAT_HEALTH);
 	//note that ssqc can provide custom stats, eg: clientstat(STAT_USER+n, EV_FLOAT, items3); can then be read by us with float items3 = getstatf(STAT_USER+n);
-	
+
 	if (shealth <= 0)
 		scoreboard = TRUE;
 
@@ -624,4 +624,3 @@ void(float apilevel, string enginename, float engineversion) CSQC_Init =
 {
 	Hud_Init();
 };
-
