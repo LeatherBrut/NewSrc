@@ -4,3 +4,23 @@
 progsdefs.qc
 keycodes.qc
 ../dpextensions.qc
+
+
+
+// Monster//
+entity/monster/ai.qc
+entity/monster/ogre.qc
+entity/monster/demon.qc
+entity/monster/shambler.qc
+entity/monster/knight.qc
+entity/monster/soldier.qc
+entity/monster/wizard.qc
+entity/monster/dog.qc
+entity/monster/zombie.qc
+entity/monster/boss.qc  
+entity/monster/tarbaby.qc
+entity/monster/hknight.qc
+entity/monster/fish.qc	
+entity/monster/shalrath.qc
+entity/monster/enforcer.qc
+entity/monster/oldone.qc	
