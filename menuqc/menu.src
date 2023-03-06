@@ -1,3 +1,5 @@
+
+menu
 #pragma progs_dat "menu.dat"
 
 //#pragma target fte
