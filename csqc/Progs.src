@@ -2,7 +2,6 @@
 
 ./csprogs.dat
 csprogsdefs.qc
-
+main.qc // to be renamed to system.qc or not !
 //CSQC extensions start here.
-Hud.qc
-//csqc_scoreboard.qc
+Hud.qc //

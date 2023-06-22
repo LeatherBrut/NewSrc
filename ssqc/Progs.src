@@ -7,6 +7,12 @@ progsdefs.qc
 
 
 
+
+
+
+
+
+
 // Monster//
 entity/monster/ai.qc
 entity/monster/ogre.qc
