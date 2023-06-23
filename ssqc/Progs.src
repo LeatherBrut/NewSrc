@@ -1,2 +1,5 @@
+//server side QuakeC
+
+../progs.dat
 progsdefs.qc
 ../dpextensions.qc

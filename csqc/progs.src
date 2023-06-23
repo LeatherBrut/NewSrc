@@ -1,7 +1,9 @@
-//client side
-csprogs.dat
+//client side QuakeC
+../csprogs.dat
 csprogsdefs.qc
+system.qc
+view.qc
 
 //CSQC extensions start here.
-Hud.qc
+//Hud.qc
 //csqc_scoreboard.qc
