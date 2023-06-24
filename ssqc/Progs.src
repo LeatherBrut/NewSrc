@@ -3,3 +3,5 @@
 ../progs.dat
 progsdefs.qc
 ../dpextensions.qc
+main.qc
+client.qc
