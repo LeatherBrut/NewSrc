@@ -11,7 +11,8 @@ void() SetChangeParms = {};
 void() StartFrame = {};
 
 
-void() precache =
+void() precaches =
 {
-	precaches("Models/box.dpm")
+	//precaches_model("Models/box.dpm")
+	precache_model("progs/player.mdl");
 };
